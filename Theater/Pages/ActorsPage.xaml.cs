@@ -33,7 +33,7 @@ namespace Theater.Pages
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            new AddWindow("Actor").Show();
+            new AddWindow("Actor", DG).Show();
         }
 
         private void LeftButton_Click(object sender, RoutedEventArgs e)

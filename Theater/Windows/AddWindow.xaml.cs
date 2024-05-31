@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Theater.Entities;
 
 namespace Theater.Windows
 {
@@ -19,7 +20,7 @@ namespace Theater.Windows
     /// </summary>
     public partial class AddWindow : Window
     {
-        private string type;
+        private string type = "";
 
         // сложни метод, делает подсказку с текстом который задаётся аргументом content
         private static void SetHint(TextBox textBox, string content)
@@ -77,6 +78,7 @@ namespace Theater.Windows
             };
         }
 
+
         private static TextBox CreateTextBox(string content)
         {
             TextBox tb = new TextBox()
@@ -91,19 +93,10 @@ namespace Theater.Windows
 
             SetHint(tb, content);
 
-            tb.KeyDown += (sender, e) =>
-            {
-                if (e.Key == Key.Enter)
-                {
-                    // Выполнить действие при нажатии Enter
-
-                }
-            };
-
             return tb;
         }
 
-        public AddWindow(string type)
+        public AddWindow(string type, DataGrid DG)
         {
             InitializeComponent();
 
@@ -123,8 +116,39 @@ namespace Theater.Windows
             }
 
             values.ForEach((it) => { text_boxes.Add(CreateTextBox(it)); });
-
             text_boxes.ForEach((it) => { MainStackPanel.Children.Add(it); });
+
+            bool IsNull = false;
+            MainStackPanel.KeyDown += (sender, e) =>
+            {
+                if(e.Key == Key.Enter)
+                {
+                    text_boxes.ForEach((it) => { if (it.Text == null || it.Text == "") IsNull = true; });
+
+                    if (!IsNull)
+                    {
+                        switch (type) 
+                        {
+
+                            case "Actor":
+                                Core.DB.Actors.Add(new Actor() 
+                                {
+                                    Name = text_boxes[0].Text, 
+                                    Surname = text_boxes[1].Text,
+                                    Patronymic = text_boxes[2].Text,
+                                    Rank = text_boxes[3].Text,
+                                    Experience = text_boxes[4].Text,
+                                });
+                                break;
+
+                        }
+                        Core.DB.SaveChanges();
+                        DG.ItemsSource = Core.DB.Actors.ToList();
+                        text_boxes.ForEach((it) => { it.Text = ""; });
+                    }
+                    IsNull = false;
+                }
+            };
         }
     }
 }
