@@ -50,7 +50,9 @@
             HeadersVisibility="Column"
             GridLinesVisibility="Horizontal"
             HorizontalGridLinesBrush="#efedef"
-            Background="Transparent">
+            Background="Transparent"
+            PreviewKeyDown="DG_PreviewKeyDown"
+            >
 
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="*"></DataGridTextColumn>

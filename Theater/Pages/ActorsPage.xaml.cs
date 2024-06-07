@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Theater.Entities;
 using Theater.Windows;
 
 namespace Theater.Pages
@@ -22,12 +23,15 @@ namespace Theater.Pages
     public partial class ActorsPage : Page
     {
 
-
-
         public ActorsPage()
         {
             InitializeComponent();
 
+            Update();
+        }
+
+        private void Update()
+        {
             DG.ItemsSource = Core.DB.Actors.ToList();
         }
 
@@ -44,6 +48,25 @@ namespace Theater.Pages
         private void RightButton_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+        private void DG_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Delete)
+            {
+                MessageBoxResult result = MessageBox.Show("Are you sure you want to delete this item?", "Confirm Delete", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                if (result == MessageBoxResult.Yes)
+                {
+                    try
+                    {
+                        DG.SelectedItem.GetType();
+                        Core.DB.Actors.Remove((Actor) DG.SelectedItem);
+                        Core.DB.SaveChanges();
+                    }
+                    catch { }
+                }
+
+                Update();
+            }
         }
     }
 }
