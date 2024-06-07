@@ -49,8 +49,11 @@ namespace Theater.Pages
         {
 
         }
+
+
         private void DG_PreviewKeyDown(object sender, KeyEventArgs e)
         {
+
             if (e.Key == Key.Delete)
             {
                 MessageBoxResult result = MessageBox.Show("Are you sure you want to delete this item?", "Confirm Delete", MessageBoxButton.YesNo, MessageBoxImage.Question);
@@ -68,5 +71,24 @@ namespace Theater.Pages
                 Update();
             }
         }
+
+        private void DG_CellEditEnding(object sender, DataGridCellEditEndingEventArgs e)
+        {
+            try
+            {
+                Actor Selected = (Actor) DG.SelectedItem;
+                if (Selected.Name != null && Selected.Surname != null && Selected.Patronymic != null && Selected.Rank != null && Selected.Experience != null)
+                {
+                    MessageBox.Show(Selected.Patronymic);
+                    Update();
+                }
+            }
+            catch 
+            {
+                Update();
+            }
+        }
+
+        // я перепробовал все методы как перехватить окончательное создание новой строки, нада что-то другое придумать
     }
 }

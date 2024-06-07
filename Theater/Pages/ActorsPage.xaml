@@ -52,6 +52,7 @@
             HorizontalGridLinesBrush="#efedef"
             Background="Transparent"
             PreviewKeyDown="DG_PreviewKeyDown"
+            CellEditEnding="DG_CellEditEnding"
             >
 
             <DataGrid.Columns>
