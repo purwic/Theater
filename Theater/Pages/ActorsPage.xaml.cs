@@ -47,7 +47,8 @@ namespace Theater.Pages
 
         private void RightButton_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.RemoveBackEntry();
+            NavigationService.Navigate(new PerformancesPage());
         }
 
 

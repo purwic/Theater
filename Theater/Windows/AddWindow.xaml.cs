@@ -20,7 +20,6 @@ namespace Theater.Windows
     /// </summary>
     public partial class AddWindow : Window
     {
-        private string type = "";
 
         // сложни метод, делает подсказку с текстом который задаётся аргументом content
         private static void SetHint(TextBox textBox, string content)
@@ -100,8 +99,6 @@ namespace Theater.Windows
         {
             InitializeComponent();
 
-            this.type = type;
-
             // тут помещены названия столбцов, каких именно определяется в switch дальше
             List<string> values = new List<string> { };
             List<TextBox> text_boxes = new List<TextBox> { };
@@ -112,7 +109,10 @@ namespace Theater.Windows
                     values = new List<string> { "Name", "Surname", "Patronymic", "Rank", "Experience" };
                     break;
 
+                case "Performance":
 
+                    values = new List<string> { "Title", "Year", "Budget" };
+                    break;
             }
 
             values.ForEach((it) => { text_boxes.Add(CreateTextBox(it)); });
@@ -125,11 +125,11 @@ namespace Theater.Windows
                 {
                     text_boxes.ForEach((it) => { if (it.Text == null || it.Text == "") IsNull = true; });
 
+
                     if (!IsNull)
                     {
                         switch (type) 
                         {
-
                             case "Actor":
                                 Core.DB.Actors.Add(new Actor() 
                                 {
@@ -138,12 +138,26 @@ namespace Theater.Windows
                                     Patronymic = text_boxes[2].Text,
                                     Rank = text_boxes[3].Text,
                                     Experience = text_boxes[4].Text,
-                                });
-                                break;
+                                }); break;
+
+                            case "Performance":
+                                Core.DB.Performances.Add(new Performance()
+                                {
+                                    Title = text_boxes[0].Text,
+                                    Year = text_boxes[1].Text,
+                                    Budget = text_boxes[2].Text,
+                                }); break;
+
 
                         }
+
                         Core.DB.SaveChanges();
-                        DG.ItemsSource = Core.DB.Actors.ToList();
+                        switch (type)
+                        {
+                            case "Actor": DG.ItemsSource = Core.DB.Actors.ToList(); break;
+
+                            case "Performance": DG.ItemsSource = Core.DB.Performances.ToList(); break;
+                        }
                         text_boxes.ForEach((it) => { it.Text = ""; });
                     }
                     IsNull = false;

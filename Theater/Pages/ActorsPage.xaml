@@ -27,7 +27,7 @@
         </StackPanel>
 
 
-        <TextBlock Name="DisplayNameTextBlock" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" FontFamily="Calibri Light">Actors Table</TextBlock>
+        <TextBlock Name="DisplayNameTextBlock" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" FontFamily="Calibri Light">Actors</TextBlock>
 
 
         <StackPanel Orientation="Horizontal" Margin="0, 4, 15, 0" HorizontalAlignment="Right" Grid.Row="0" Grid.Column="3">
