@@ -25,11 +25,11 @@
                 <Image Source="/Assets/add.png"></Image>
             </Button>
         </StackPanel>
-        
+
 
         <TextBlock Name="DisplayNameTextBlock" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" FontFamily="Calibri Light">Actors Data Base</TextBlock>
 
-        
+
         <StackPanel Orientation="Horizontal" Margin="0, 4, 15, 0" HorizontalAlignment="Right" Grid.Row="0" Grid.Column="3">
             <Button x:Name="LeftButton" Height="45" Width="45" Margin="5" BorderThickness="0" Background="Transparent" Click="LeftButton_Click">
                 <Image Source="/Assets/left.png"></Image>
@@ -38,7 +38,7 @@
                 <Image Source="/Assets/right.png"></Image>
             </Button>
         </StackPanel>
-        
+
 
         <DataGrid 
             Grid.Row="1"

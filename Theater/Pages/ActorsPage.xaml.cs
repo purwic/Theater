@@ -77,18 +77,30 @@ namespace Theater.Pages
             try
             {
                 Actor Selected = (Actor) DG.SelectedItem;
-                if (Selected.Name != null && Selected.Surname != null && Selected.Patronymic != null && Selected.Rank != null && Selected.Experience != null)
+                var cell = (TextBox) e.EditingElement;
+                string Value = cell.Text;
+
+                if (Selected.Name != null && Selected.Surname != null && Selected.Patronymic != null && Selected.Rank != null && Selected.Experience != null && Value != "")
                 {
-                    MessageBox.Show(Selected.Patronymic);
-                    Update();
+                    if ($"{e.Column.Header}" == "Name")
+                        Selected.Name = Value;
+                    else if ($"{e.Column.Header}" == "Surname")
+                        Selected.Surname = Value;
+                    else if ($"{e.Column.Header}" == "Patronymic")
+                        Selected.Patronymic = Value;
+                    else if ($"{e.Column.Header}" == "Rank")
+                        Selected.Rank = Value;
+                    else if ($"{e.Column.Header}" == "Experience")
+                        Selected.Experience = Value;
+
+                    Core.DB.SaveChanges();
                 }
-            }
-            catch 
-            {
-                Update();
-            }
+
+            } catch { }
+
+
+            Update();
         }
 
-        // я перепробовал все методы как перехватить окончательное создание новой строки, нада что-то другое придумать
     }
 }
