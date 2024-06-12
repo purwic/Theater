@@ -42,7 +42,8 @@ namespace Theater.Pages
 
         private void LeftButton_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.RemoveBackEntry();
+            NavigationService.Navigate(new EnploymentPage());
         }
 
         private void RightButton_Click(object sender, RoutedEventArgs e)

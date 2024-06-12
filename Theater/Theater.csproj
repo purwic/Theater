@@ -81,8 +81,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Pages\EnploymentPage.xaml.cs">
+      <DependentUpon>EnploymentPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\PerformancesPage.xaml.cs">
       <DependentUpon>PerformancesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\AddOrEditEnploymentWindow.xaml.cs">
+      <DependentUpon>AddOrEditEnploymentWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\AddWindow.xaml.cs">
       <DependentUpon>AddWindow.xaml</DependentUpon>
@@ -131,7 +137,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\EnploymentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\PerformancesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AddOrEditEnploymentWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
