@@ -82,7 +82,6 @@ namespace Theater.Windows
         {
             TextBox tb = new TextBox()
             {
-                Name = content + "TextBox",
                 Margin = new Thickness(0, 7, 0, 0),
                 Height = 36,
                 BorderThickness = new Thickness(0),
@@ -106,12 +105,12 @@ namespace Theater.Windows
             {
                 case "Actor":
 
-                    values = new List<string> { "Name", "Surname", "Patronymic", "Rank", "Experience" };
+                    values = new List<string> { "Имя", "Фамилия", "Отчество", "Звание", "Стаж" };
                     break;
 
                 case "Performance":
 
-                    values = new List<string> { "Title", "Year", "Budget" };
+                    values = new List<string> { "Название", "Год постановки", "Бюджет" };
                     break;
             }
 

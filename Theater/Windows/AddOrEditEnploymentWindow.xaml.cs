@@ -83,7 +83,6 @@ namespace Theater.Windows
         {
             TextBox tb = new TextBox()
             {
-                Name = content + "TextBox",
                 Margin = new Thickness(0, 7, 0, 0),
                 Height = 36,
                 BorderThickness = new Thickness(0),
@@ -102,7 +101,7 @@ namespace Theater.Windows
         public AddOrEditEnploymentWindow(string mode, Enployment enployment, DataGrid DG)
         {
             InitializeComponent();
-            List<string> values = new List<string> { "Role", "Cost" };
+            List<string> values = new List<string> { "Роль", "Стоимость годового контракта" };
             List<TextBox> text_boxes = new List<TextBox>();
 
             values.ForEach((it) => { text_boxes.Add(CreateTextBox(it)); });

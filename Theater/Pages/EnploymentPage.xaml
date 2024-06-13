@@ -27,7 +27,7 @@
         </StackPanel>
 
 
-        <TextBlock Name="DisplayNameTextBlock" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" FontFamily="Calibri Light">Enployment</TextBlock>
+        <TextBlock Name="DisplayNameTextBlock" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" FontFamily="Calibri Light">Занятость</TextBlock>
 
 
         <StackPanel Orientation="Horizontal" Margin="0, 4, 15, 0" HorizontalAlignment="Right" Grid.Row="0" Grid.Column="3">
@@ -57,10 +57,10 @@
             >
 
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Actor" Binding="{Binding Actor.Name}" Width="*"></DataGridTextColumn>
-                <DataGridTextColumn Header="Performance" Binding="{Binding Performance.Title}" Width="*"></DataGridTextColumn>
-                <DataGridTextColumn Header="Role" Binding="{Binding Role}" Width="*"></DataGridTextColumn>
-                <DataGridTextColumn Header="Cost" Binding="{Binding Cost}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Актёр" Binding="{Binding Actor.Name}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Спектакль" Binding="{Binding Performance.Title}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Роль" Binding="{Binding Role}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Стоимость годового контракта" Binding="{Binding Cost}" Width="*"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

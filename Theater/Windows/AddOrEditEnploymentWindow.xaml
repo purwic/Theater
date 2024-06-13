@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Theater.Windows"
         mc:Ignorable="d"
-        Title="Add Or Edit" Height="450" Width="450" ResizeMode="NoResize">
+        Title="Добавить/Изменить" Height="450" Width="450" ResizeMode="NoResize">
 
 
 
@@ -15,7 +15,7 @@
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <TextBlock HorizontalAlignment="Center" Margin="4" FontSize="18" Foreground="#434343">Press "Enter" to save</TextBlock>
+        <TextBlock HorizontalAlignment="Center" Margin="4" FontSize="18" Foreground="#434343">"Enter" для сохранения</TextBlock>
 
         <StackPanel Name="MainStackPanel" Grid.Row="1" Margin="5, 15">
 

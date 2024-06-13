@@ -27,7 +27,7 @@
         </StackPanel>
 
 
-        <TextBlock Name="DisplayNameTextBlock" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" FontFamily="Calibri Light">Performances</TextBlock>
+        <TextBlock Name="DisplayNameTextBlock" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" FontFamily="Calibri Light">Спектакли</TextBlock>
 
 
         <StackPanel Orientation="Horizontal" Margin="0, 4, 15, 0" HorizontalAlignment="Right" Grid.Row="0" Grid.Column="3">
@@ -56,9 +56,9 @@
             >
 
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Title" Binding="{Binding Title}" Width="*"></DataGridTextColumn>
-                <DataGridTextColumn Header="Year" Binding="{Binding Year}" Width="*"></DataGridTextColumn>
-                <DataGridTextColumn Header="Budget" Binding="{Binding Budget}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Название" Binding="{Binding Title}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Год постановки" Binding="{Binding Year}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Бюджет" Binding="{Binding Budget}" Width="*"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

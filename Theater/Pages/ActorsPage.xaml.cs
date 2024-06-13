@@ -58,7 +58,7 @@ namespace Theater.Pages
 
             if (e.Key == Key.Delete)
             {
-                MessageBoxResult result = MessageBox.Show("Are you sure you want to delete this item?", "Confirm Delete", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                MessageBoxResult result = MessageBox.Show("Вы уверены что хотите удалить элемент?", "Удаление", MessageBoxButton.YesNo, MessageBoxImage.Question);
                 if (result == MessageBoxResult.Yes)
                 {
                     try
@@ -84,15 +84,15 @@ namespace Theater.Pages
 
                 if (Selected.Name != null && Selected.Surname != null && Selected.Patronymic != null && Selected.Rank != null && Selected.Experience != null && Value != "")
                 {
-                    if ($"{e.Column.Header}" == "Name")
+                    if ($"{e.Column.Header}" == "Имя")
                         Selected.Name = Value;
-                    else if ($"{e.Column.Header}" == "Surname")
+                    else if ($"{e.Column.Header}" == "Фамилия")
                         Selected.Surname = Value;
-                    else if ($"{e.Column.Header}" == "Patronymic")
+                    else if ($"{e.Column.Header}" == "Отчество")
                         Selected.Patronymic = Value;
-                    else if ($"{e.Column.Header}" == "Rank")
+                    else if ($"{e.Column.Header}" == "Звание")
                         Selected.Rank = Value;
-                    else if ($"{e.Column.Header}" == "Experience")
+                    else if ($"{e.Column.Header}" == "Стаж")
                         Selected.Experience = Value;
 
                     Core.DB.SaveChanges();

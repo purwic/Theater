@@ -16,22 +16,6 @@ using System.Windows.Shapes;
 using Theater.Entities;
 using Theater.Windows;
 
-/*
-<ComboBox x:Name="myComboBox" ItemsSource="{Binding actorsList}" Height="20" Width="100">
-    <ComboBox.ItemTemplate>
-        <DataTemplate>
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="{Binding Name}" />
-                <TextBlock Text=" "></TextBlock>
-                <TextBlock Text="{Binding Surname}" />
-                <TextBlock Text=" "></TextBlock>
-                <TextBlock Text="{Binding Patronymic}" />
-            </StackPanel>
-        </DataTemplate>
-    </ComboBox.ItemTemplate>
-</ComboBox>
- */
-
 
 namespace Theater.Pages
 {
@@ -90,7 +74,7 @@ namespace Theater.Pages
 
             if (e.Key == Key.Delete)
             {
-                MessageBoxResult result = MessageBox.Show("Are you sure you want to delete this item?", "Confirm Delete", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                MessageBoxResult result = MessageBox.Show("Вы уверены что хотите удалить элемент?", "Удаление", MessageBoxButton.YesNo, MessageBoxImage.Question);
                 if (result == MessageBoxResult.Yes)
                 {
                     try
