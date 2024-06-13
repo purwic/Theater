@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Theater.Windows"
         mc:Ignorable="d"
-        Title="Добавить/Изменить" Height="450" Width="450" ResizeMode="NoResize">
+        Title="Добавить/Изменить" Height="450" Width="450" ResizeMode="NoResize" WindowStyle="ToolWindow">
 
 
 

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Theater"
         mc:Ignorable="d"
-        Title="Занятость актёров театра" Height="720" Width="1080" ResizeMode="NoResize">
+        Title="Занятость актёров театра" Height="720" Width="1080" ResizeMode="NoResize" WindowStyle="ToolWindow">
     <Grid>
         <Frame Name="ContentFrame" NavigationUIVisibility="Hidden"></Frame>
     </Grid>
